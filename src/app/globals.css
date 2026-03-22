@@ -1,26 +1,194 @@
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+@theme {
+  --color-primary: #7f13ec;
+  --color-neon-green: #22c55e;
+  --color-background-light: #f7f6f8;
+  --color-background-dark: #0a0a0a;
+  --color-surface-dark: #160e1e;
+  --color-accent-purple: #ad92c9;
+  --font-display: "Be Vietnam Pro", sans-serif;
+  --radius: 1rem;
+  --radius-lg: 2rem;
+  --radius-xl: 3rem;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-display);
+  background-color: var(--color-background-dark);
+}
+
+.custom-scrollbar::-webkit-scrollbar {
+  width: 4px;
+  height: 4px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: #362348;
+  border-radius: 10px;
+}
+
+.glass-panel {
+  background: rgba(22, 14, 30, 0.7);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(127, 19, 236, 0.1);
+}
+
+.guild-card-gradient {
+  background: linear-gradient(180deg, rgba(22, 14, 30, 0) 0%, rgba(22, 14, 30, 0.95) 100%);
+}
+
+.game-card-hover:hover .game-card-overlay {
+  opacity: 1;
+}
+.game-card-hover:hover .game-card-info {
+  transform: translateY(-10px);
+}
+
+.glass-header {
+  backdrop-filter: blur(16px);
+  background: rgba(10, 10, 10, 0.85);
+  border-bottom: 1px solid rgba(127, 19, 236, 0.2);
+}
+
+.neon-glow-purple {
+  text-shadow: 0 0 10px rgba(127, 19, 236, 0.8);
+}
+
+.neon-glow-green {
+  text-shadow: 0 0 10px rgba(34, 197, 94, 0.6);
+}
+
+.purple-radial-glow {
+  background: radial-gradient(
+    circle at center,
+    rgba(127, 19, 236, 0.12) 0%,
+    transparent 70%
+  );
+}
+
+.asset-card-glow:hover {
+  box-shadow: 0 0 25px rgba(127, 19, 236, 0.15);
+  border-color: rgba(127, 19, 236, 0.4);
+}
+
+.no-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+.material-symbol-fill {
+  font-variation-settings: "FILL" 1;
+}
+
+.checkout-glass-card {
+  background: rgba(22, 14, 30, 0.78);
+  backdrop-filter: blur(20px);
+  -webkit-backdrop-filter: blur(20px);
+  border: 1px solid rgba(127, 19, 236, 0.22);
+}
+
+.checkout-neon-glow {
+  box-shadow: 0 0 28px rgba(127, 19, 236, 0.18);
+}
+
+.checkout-payment-active {
+  background: rgba(127, 19, 236, 0.1);
+  border: 1px solid rgba(127, 19, 236, 0.75);
+  box-shadow: 0 0 18px rgba(127, 19, 236, 0.12);
+}
+
+.checkout-scrollbar::-webkit-scrollbar {
+  width: 4px;
+}
+.checkout-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.checkout-scrollbar::-webkit-scrollbar-thumb {
+  background: rgba(127, 19, 236, 0.35);
+  border-radius: 10px;
+}
+
+.handover-glass-header {
+  background: rgba(10, 10, 10, 0.82);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border-bottom: 1px solid rgba(127, 19, 236, 0.22);
+}
+
+.handover-stepper-line {
+  width: 2px;
+  background: #334155;
+}
+
+.handover-stepper-line-active {
+  background: #7f13ec;
+  box-shadow: 0 0 8px rgba(127, 19, 236, 0.45);
+}
+
+.handover-card-accent {
+  background: linear-gradient(
+    145deg,
+    rgba(127, 19, 236, 0.12) 0%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+  border: 1px solid rgba(127, 19, 236, 0.18);
+}
+
+.handover-neon-border {
+  border: 1px solid rgba(127, 19, 236, 0.35);
+  box-shadow: 0 0 18px rgba(127, 19, 236, 0.12);
+}
+
+.chat-bubble-buyer {
+  background: #7f13ec;
+  color: #fff;
+  box-shadow: 0 4px 18px rgba(127, 19, 236, 0.35);
+}
+
+.payment-success-grid {
+  background-color: var(--color-background-dark);
+  background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='40' height='40' viewBox='0 0 40 40'%3E%3Cpath d='M0 40 L40 40 L40 0' fill='none' stroke='%23160e1e' stroke-width='0.5'/%3E%3C/svg%3E");
+}
+
+.payment-success-glass {
+  background: rgba(16, 10, 24, 0.72);
+  backdrop-filter: blur(16px);
+  -webkit-backdrop-filter: blur(16px);
+  border: 1px solid rgba(127, 19, 236, 0.14);
+}
+
+.payment-success-card-accent {
+  background: linear-gradient(
+    145deg,
+    rgba(127, 19, 236, 0.14) 0%,
+    rgba(10, 10, 10, 0.92) 100%
+  );
+  border: 1px solid rgba(127, 19, 236, 0.16);
+}
+
+.payment-success-neon-blue {
+  box-shadow: 0 0 28px rgba(127, 19, 236, 0.28);
+}
+
+.payment-success-check-glow {
+  filter: drop-shadow(0 0 14px rgba(34, 197, 94, 0.45))
+    drop-shadow(0 0 28px rgba(127, 19, 236, 0.4));
+}
+
+.payment-success-stepper-line {
+  height: 2px;
+  background: #334155;
+  border-radius: 9999px;
+}
+
+.payment-success-stepper-line-active {
+  background: linear-gradient(90deg, #7f13ec, #ad92c9);
+  box-shadow: 0 0 8px rgba(127, 19, 236, 0.45);
 }
